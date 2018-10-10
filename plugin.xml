@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-ios-faceid" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>cordova-plugin-ios-faceid</name>
+
+	<asset src="www/CID.js" target="js/CID.js" />
+
+    <js-module name="cordova-plugin-ios-faceid" src="www/CID.js">
+        <clobbers target="CID" />
+    </js-module>
+
+    <platform name="ios">
+        <config-file parent="/widget" target="config.xml">
+            <feature name="CID">
+                <param name="ios-package" value="CID" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/CID.h" />
+        <source-file src="src/ios/CID.m" />
+    </platform>
+</plugin>

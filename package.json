@@ -1,0 +1,28 @@
+{
+  "name": "cordova-plugin-ios-faceid",
+  "version": "1.0.0",
+  "description": "A cordova plugin for iOS face and touch identification",
+  "cordova": {
+    "id": "cordova-plugin-ios-faceid",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cheney925/cordova-plugin-ios-faceid.git"
+  },
+  "keywords": [
+    "cordova",
+    "plugin",
+    "ios",
+    "faceid",
+    "touchid"
+  ],
+  "author": "Cheney Hu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cheney925/cordova-plugin-ios-faceid/issues"
+  },
+  "homepage": "https://github.com/Cheney925/cordova-plugin-ios-faceid#readme"
+}
