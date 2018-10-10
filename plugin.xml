@@ -15,6 +15,10 @@
             </feature>
         </config-file>
 
+        <config-file target="*-Info.plist" parent="NSFaceIDUsageDescription">
+            <string>Look at my face :)</string>
+        </config-file>
+
         <header-file src="src/ios/CID.h" />
         <source-file src="src/ios/CID.m" />
     </platform>
