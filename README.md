@@ -1,8 +1,8 @@
 # cordova-plugin-ios-faceid
 A cordova plugin for iOS face identification and touch identification.
 
-![npm](https://img.shields.io/npm/v/cordova-plugin-face-id.svg)
-![taobaonpm](https://npm.taobao.org/badge/v/cordova-plugin-face-id.svg)
+![npm](https://img.shields.io/npm/v/cordova-plugin-ios-faceid.svg)
+![taobaonpm](https://npm.taobao.org/badge/v/cordova-plugin-ios-faceid.svg)
 
 ## Installation
 `cordova plugin add cordova-plugin-ios-faceid`

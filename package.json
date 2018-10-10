@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-ios-faceid",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A cordova plugin for iOS face and touch identification",
   "cordova": {
     "id": "cordova-plugin-ios-faceid",
