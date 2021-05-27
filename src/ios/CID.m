@@ -14,8 +14,8 @@
     NSError *authError = nil;
     NSString *myLocalizedReasonString = [command.arguments objectAtIndex:0];
     
-    if ([myContext canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&authError]) {
-        [myContext evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:myLocalizedReasonString reply:^(BOOL success, NSError *error) {
+    if ([myContext canEvaluatePolicy:LAPolicyDeviceOwnerAuthentication error:&authError]) {
+        [myContext evaluatePolicy:LAPolicyDeviceOwnerAuthentication localizedReason:myLocalizedReasonString reply:^(BOOL success, NSError *error) {
             if (success) {
                 // User authenticated successfully, take appropriate action
                 NSLog(@"success");
