@@ -14,8 +14,8 @@
     NSError *authError = nil;
     NSString *myLocalizedReasonString = [command.arguments objectAtIndex:0];
     
-    if ([myContext canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&authError]) {
-        [myContext evaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics localizedReason:myLocalizedReasonString reply:^(BOOL success, NSError *error) {
+    if ([myContext canEvaluatePolicy:LAPolicyDeviceOwnerAuthentication error:&authError]) {
+        [myContext evaluatePolicy:LAPolicyDeviceOwnerAuthentication localizedReason:myLocalizedReasonString reply:^(BOOL success, NSError *error) {
             if (success) {
                 // User authenticated successfully, take appropriate action
                 NSLog(@"success");
@@ -24,26 +24,33 @@
                 // User did not authenticate successfully, look at error and take appropriate action
                 if (error.code == kLAErrorUserFallback) {
                     NSLog(@"use password instead");
-                    [self returnResult:@"User use password instead"];
+                    [self returnError:@"User use password instead"];
                 } else if (error.code == kLAErrorUserCancel) {
                     NSLog(@"cancelled");
-                    [self returnResult:@"User cancelled"];
+                    [self returnError:@"User cancelled"];
                 } else {
                     NSLog(@"failed");
-                    [self returnResult:@"failed"];
+                    [self returnError:@"failed"];
                 }
             }
         }];
     } else {
         // Could not evaluate policy; look at authError and present an appropriate message to user
         NSLog(@"Current device doesn't support authentication with biometrics");
-        [self returnResult:@"Current device doesn't support authentication with biometrics"];
+        [self returnError:@"Current device doesn't support authentication with biometrics"];
     }
 }
 
 - (void)returnResult:(NSString *)result
 {
     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:result];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackID];
+}
+
+
+- (void)returnError:(NSString *)result
+{
+    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:result];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:self.callbackID];
 }
 

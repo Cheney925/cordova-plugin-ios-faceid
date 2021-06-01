@@ -16,7 +16,7 @@
         </config-file>
 
         <config-file target="*-Info.plist" parent="NSFaceIDUsageDescription">
-            <string>Look at my face :)</string>
+            <string>Use Biometrics for Authentication</string>
         </config-file>
 
         <header-file src="src/ios/CID.h" />
